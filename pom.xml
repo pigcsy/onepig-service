@@ -43,7 +43,10 @@
         <zxing.version>3.2.1</zxing.version>
         <druid.version>1.0.28</druid.version>
         <beetl.version>2.7.15</beetl.version>
+        <validation-api.version>1.0.0.GA</validation-api.version>
         <swagger.version>2.2.2</swagger.version>
+        <lombok.version>1.16.18</lombok.version>
+        <log4j-core.version>2.11.0</log4j-core.version>
         <commons-lang3.version>3.6</commons-lang3.version>
     </properties>
 
@@ -79,6 +82,10 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
 
         <!--shiro依赖-->
         <dependency>
@@ -101,6 +108,11 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j-core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.shiro</groupId>
@@ -183,6 +195,12 @@
             <version>${beetl.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${swagger.version}</version>
@@ -197,7 +215,11 @@
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation-api.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

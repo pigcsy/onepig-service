@@ -6,7 +6,7 @@ import com.one.pig.common.exception.BussinessException;
 import com.one.pig.common.exception.InvalidKaptchaException;
 import com.one.pig.core.log.LogManager;
 import com.one.pig.core.log.factory.LogTaskFactory;
-import com.one.pig.core.shiro.ShiroKit;
+import com.one.pig.core.shiro.token.ShiroUtil;
 import com.one.pig.core.support.HttpKit;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.CredentialsException;
@@ -46,7 +46,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public ErrorTip notFount(BussinessException e) {
-        LogManager.me().executeLog(LogTaskFactory.exceptionLog(ShiroKit.getUser().getId(), e));
+        LogManager.me().executeLog(LogTaskFactory.exceptionLog(ShiroUtil.getUser().getUserId(), e));
         HttpKit.getRequest().setAttribute("tip", e.getMessage());
         log.error("业务异常:", e);
         return new ErrorTip(e.getCode(), e.getMessage());
@@ -129,7 +129,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public ErrorTip notFount(RuntimeException e) {
-        LogManager.me().executeLog(LogTaskFactory.exceptionLog(ShiroKit.getUser().getId(), e));
+        LogManager.me().executeLog(LogTaskFactory.exceptionLog(ShiroUtil.getUser().getUserId(), e));
         HttpKit.getRequest().setAttribute("tip", "服务器未知运行时异常");
         log.error("运行时异常:", e);
         return new ErrorTip(BizExceptionEnum.SERVER_ERROR);

@@ -15,11 +15,12 @@
  */
 package com.one.pig.core.shiro.check;
 
+
 import com.one.pig.core.listener.ConfigListener;
-import com.one.pig.core.shiro.ShiroKit;
-import com.one.pig.core.shiro.ShiroUser;
-import com.one.pig.core.support.CollectionKit;
-import com.one.pig.core.support.HttpKit;
+import com.one.pig.core.shiro.token.ShiroUser;
+import com.one.pig.core.shiro.token.ShiroUtil;
+import com.one.pig.core.util.common.CollectionUtils;
+import com.one.pig.core.util.common.HttpUtils;
 import com.one.pig.core.util.common.SpringContextHolder;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
@@ -41,12 +42,12 @@ public class PermissionCheckFactory implements ICheck {
 
     @Override
     public boolean check(Object[] permissions) {
-        ShiroUser user = ShiroKit.getUser();
+        ShiroUser user = ShiroUtil.getUser();
         if (null == user) {
             return false;
         }
-        String join = CollectionKit.join(permissions, ",");
-        if (ShiroKit.hasAnyRoles(join)) {
+        String join = CollectionUtils.join(permissions, ",");
+        if (ShiroUtil.hasAnyRoles(join)) {
             return true;
         }
         return false;
@@ -54,8 +55,8 @@ public class PermissionCheckFactory implements ICheck {
 
     @Override
     public boolean checkAll() {
-        HttpServletRequest request = HttpKit.getRequest();
-        ShiroUser user = ShiroKit.getUser();
+        HttpServletRequest request = HttpUtils.getRequest();
+        ShiroUser user = ShiroUtil.getUser();
         if (null == user) {
             return false;
         }
@@ -64,7 +65,7 @@ public class PermissionCheckFactory implements ICheck {
         if (str.length > 3) {
             requestURI = "/" + str[1] + "/" + str[2];
         }
-        if (ShiroKit.hasPermission(requestURI)) {
+        if (ShiroUtil.hasPermission(requestURI)) {
             return true;
         }
         return false;

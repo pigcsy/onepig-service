@@ -6,8 +6,8 @@ import com.one.pig.common.constant.dictmap.factory.DictMapFactory;
 import com.one.pig.core.log.LogManager;
 import com.one.pig.core.log.LogObjectHolder;
 import com.one.pig.core.log.factory.LogTaskFactory;
-import com.one.pig.core.shiro.ShiroKit;
-import com.one.pig.core.shiro.ShiroUser;
+import com.one.pig.core.shiro.token.ShiroUser;
+import com.one.pig.core.shiro.token.ShiroUtil;
 import com.one.pig.core.support.HttpKit;
 import com.one.pig.core.util.common.Contrast;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -68,7 +68,7 @@ public class LogAop {
         String methodName = currentMethod.getName();
 
         //如果当前用户未登录，不做日志
-        ShiroUser user = ShiroKit.getUser();
+        ShiroUser user = ShiroUtil.getUser();
         if (null == user) {
             return;
         }
@@ -101,6 +101,6 @@ public class LogAop {
             msg = Contrast.parseMutiKey(dictMap,key,parameters);
         }
 
-        LogManager.me().executeLog(LogTaskFactory.bussinessLog(user.getId(), bussinessName, className, methodName, msg));
+        LogManager.me().executeLog(LogTaskFactory.bussinessLog(user.getUserId(), bussinessName, className, methodName, msg));
     }
 }

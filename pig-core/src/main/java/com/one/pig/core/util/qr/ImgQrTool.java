@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
@@ -60,15 +61,12 @@ public class ImgQrTool {
     }
 
     /**
-     * 生成带图片的二维码
      *
      * @param content       二维码的内容
      * @param width         宽度
      * @param height        高度
      * @param srcImagePath  被镶嵌的图片的地址
-     * @param destImagePath 生成二维码图片的地址
-     * @author fengshuonan
-     * @since 2.3.0
+     * @param outputStream  生成二维码图片的地址
      */
     public static void encode(String content, int width, int height, String srcImagePath, OutputStream outputStream) {
         try {

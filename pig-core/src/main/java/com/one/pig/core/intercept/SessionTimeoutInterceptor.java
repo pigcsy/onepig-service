@@ -1,7 +1,7 @@
 package com.one.pig.core.intercept;
 
 import com.one.pig.common.controller.BaseController;
-import com.one.pig.core.shiro.ShiroKit;
+import com.one.pig.core.shiro.token.ShiroUtil;
 import com.one.pig.core.support.HttpKit;
 import org.apache.shiro.session.InvalidSessionException;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -34,8 +34,8 @@ public class SessionTimeoutInterceptor extends BaseController {
         if (servletPath.equals("/kaptcha") || servletPath.equals("/login") || servletPath.equals("/global/sessionError")) {
             return point.proceed();
         }else{
-            if(ShiroKit.getSession().getAttribute("sessionFlag") == null){
-                ShiroKit.getSubject().logout();
+            if(ShiroUtil.getSession().getAttribute("sessionFlag") == null){
+                ShiroUtil.getSubject().logout();
                 throw new InvalidSessionException();
             }else{
                 return point.proceed();

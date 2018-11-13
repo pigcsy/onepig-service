@@ -15,7 +15,7 @@
  */
 package com.one.pig.core.beetl;
 
-import com.one.pig.core.shiro.ShiroUser;
+import com.one.pig.core.shiro.token.ShiroUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.beetl.core.GroupTemplate;

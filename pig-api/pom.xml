@@ -15,6 +15,15 @@
     <artifactId>pig-api</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <!-- 第三方 JAR 依赖 -->
+    <dependencies>
+        <dependency>
+            <groupId>com.pig</groupId>
+            <artifactId>pig-core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
-    
+
+
 </project>
