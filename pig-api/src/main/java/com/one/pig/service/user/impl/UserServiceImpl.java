@@ -1,38 +1,11 @@
 package com.one.pig.service.user.impl;
 
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.one.pig.bean.dto.common.MailDto;
-import com.one.pig.bean.dto.user.UserDto;
-import com.one.pig.bean.vo.user.UserNumVo;
-import com.one.pig.common.persistence.dao.MenuMapper;
-import com.one.pig.common.persistence.dao.UserMapper;
-import com.one.pig.common.persistence.model.User;
-import com.one.pig.core.shiro.token.ShiroUser;
-import com.one.pig.core.shiro.token.ShiroUtil;
-import com.one.pig.core.util.common.ConvertUtils;
-import com.one.pig.core.util.common.DateUtils;
-import com.one.pig.core.util.common.IpUtils;
-import com.one.pig.core.util.common.MathUtils;
-import com.one.pig.core.util.common.SpringContextHolder;
 import com.one.pig.service.user.UserService;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
-import org.apache.shiro.crypto.hash.Md5Hash;
-import org.apache.shiro.util.ByteSource;
-import org.springframework.beans.BeanUtils;
+import com.one.pig.system.dao.MenuMapper;
+import com.one.pig.system.dao.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static com.one.pig.common.exception.BizExceptionEnum.NO_THIS_USER;
 
 @Service
 public class UserServiceImpl implements UserService {

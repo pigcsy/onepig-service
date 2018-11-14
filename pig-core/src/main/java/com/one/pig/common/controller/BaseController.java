@@ -6,7 +6,6 @@ import com.one.pig.common.page.PageInfoBT;
 import com.one.pig.common.page.PageReq;
 import com.one.pig.common.warpper.BaseControllerWarpper;
 import com.one.pig.core.support.HttpKit;
-import com.one.pig.core.util.common.FileUtil;
 import com.one.pig.core.util.common.ToolUtil;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -106,16 +105,16 @@ public class BaseController {
         }
     }
 
-    /**
-     * 返回前台文件流
-     *
-     * @author fengshuonan
-     * @date 2017年2月28日 下午2:53:19
-     */
-    protected ResponseEntity<byte[]> renderFile(String fileName, String filePath) {
-        byte[] bytes = FileUtil.toByteArray(filePath);
-        return renderFile(fileName, bytes);
-    }
+    // /**
+    //  * 返回前台文件流
+    //  *
+    //  * @author fengshuonan
+    //  * @date 2017年2月28日 下午2:53:19
+    //  */
+    // protected ResponseEntity<byte[]> renderFile(String fileName, String filePath) {
+    //     byte[] bytes = FileUtils.toByteArray(filePath);
+    //     return renderFile(fileName, bytes);
+    // }
 
     /**
      * 返回前台文件流

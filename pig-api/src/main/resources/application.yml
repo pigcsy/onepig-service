@@ -20,8 +20,8 @@ server:
 
 ###################  MyBatis 配置  ###################
 mybatis:
-  type-aliases-package: com.one.pig.common.persistence.model
-  mapper-locations: classpath:com/one/pig/**/*.xml
+  type-aliases-package: com.one.pig
+  mapper-locations: classpath:mapper/*.xml
 
 
 ###################  MyBatis 分页插件配置  ###################
@@ -40,37 +40,59 @@ beetl:
   resource-tagsuffix: tag
   resource-auto-check: true #是否检测文件变化,开发用true合适，但线上要改为false
 
-
 ###################  spring配置  ###################
 spring:
   redis:
     host: 47.98.107.248
     port: 6379
     password:
-    pool:
-      max-active: 8
-      max-wait: -1
-      max-idle: 8
-      min-idle: 0
-    timeout: 0
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1ms
+    timeout: 0ms
   profiles:
     active: dev
   mvc:
     static-path-pattern: /static/**
     view:
       prefix: /WEB-INF/view
+      suffix: .jsp
   http:
     converters:
       preferred-json-mapper: fastjson
     multipart:
-      max-request-size: 100MB #最大请求大小
-      max-file-size: 100MB #最大文件大小
   devtools:
     restart:
       enabled: true #是否开启开发者工具（true/false）
-      additional-paths: src/main/java
+#      additional-paths: src/main/java
       exclude: static/**,WEB-INF/view/**
-
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  output:
+    ansi:
+      enabled: always
+  resources:
+    static-locations: ["classpath:/MATE-INF","classpath:/WEB-INFO/view"]
+mapper:
+  mappers: com.one.pig
+  not-empty: false
+  identity: MYSQL
+##配置日志
+#logging:
+#  #配置日志文件路径
+#  level:
+#    xatu.zsl: debug #不同目录下的日志可配置不同级别
+#    org.springfromework.web: info
+#    org.hibernate: error
+#  #采用相对路径方式将日志文件输出到【log\myspringboot.log】
+#  file: log\myspringboot.log
+#  pattern:
+#    dateformat: yyyy-MM-dd HH:mm:ss.SSS
 ---
 
 ##########################################################

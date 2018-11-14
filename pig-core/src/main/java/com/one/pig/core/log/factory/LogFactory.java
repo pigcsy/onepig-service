@@ -2,8 +2,8 @@ package com.one.pig.core.log.factory;
 
 import com.one.pig.common.constant.state.LogSucceed;
 import com.one.pig.common.constant.state.LogType;
-import com.one.pig.common.persistence.model.LoginLog;
-import com.one.pig.common.persistence.model.OperationLog;
+import com.one.pig.system.model.LoginLog;
+import com.one.pig.system.model.OperationLog;
 
 import java.util.Date;
 
@@ -40,7 +40,7 @@ public class LogFactory {
      * @author fengshuonan
      * @Date 2017/3/30 18:46
      */
-    public static LoginLog createLoginLog(LogType logType, Integer userId, String msg,String ip) {
+    public static LoginLog createLoginLog(LogType logType, Integer userId, String msg, String ip) {
         LoginLog loginLog = new LoginLog();
         loginLog.setLogname(logType.getMessage());
         loginLog.setUserid(userId);

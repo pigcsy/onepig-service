@@ -1,9 +1,9 @@
 package com.one.pig.service.user.impl;
 
 
-import com.anniu.ordercall.service.user.IRoleService;
-import com.one.pig.common.persistence.dao.RelationMapper;
-import com.one.pig.common.persistence.dao.RoleMapper;
+import com.one.pig.service.user.IRoleService;
+import com.one.pig.system.dao.RelationMapper;
+import com.one.pig.system.dao.RoleMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

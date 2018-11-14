@@ -2,13 +2,13 @@ package com.one.pig.core.log.factory;
 
 import com.one.pig.common.constant.state.LogSucceed;
 import com.one.pig.common.constant.state.LogType;
-import com.one.pig.common.persistence.dao.LoginLogMapper;
-import com.one.pig.common.persistence.dao.OperationLogMapper;
-import com.one.pig.common.persistence.model.LoginLog;
-import com.one.pig.common.persistence.model.OperationLog;
 import com.one.pig.core.log.LogManager;
 import com.one.pig.core.util.common.SpringContextHolder;
 import com.one.pig.core.util.common.ToolUtil;
+import com.one.pig.system.dao.LoginLogMapper;
+import com.one.pig.system.dao.OperationLogMapper;
+import com.one.pig.system.model.LoginLog;
+import com.one.pig.system.model.OperationLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +23,7 @@ import java.util.TimerTask;
 public class LogTaskFactory {
 
     private static Logger             logger             = LoggerFactory.getLogger(LogManager.class);
-    private static LoginLogMapper     loginLogMapper     = SpringContextHolder.getBean(LoginLogMapper.class);
+    private static LoginLogMapper loginLogMapper     = SpringContextHolder.getBean(LoginLogMapper.class);
     private static OperationLogMapper operationLogMapper = SpringContextHolder.getBean(OperationLogMapper.class);
 
     public static TimerTask loginLog(final Integer userId, final String ip) {

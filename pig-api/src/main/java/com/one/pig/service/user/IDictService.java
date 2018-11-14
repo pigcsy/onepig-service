@@ -1,4 +1,4 @@
-package com.anniu.ordercall.service.user;
+package com.one.pig.service.user;
 
 /**
  * 字典服务

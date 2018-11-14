@@ -1,6 +1,5 @@
 package com.one.pig.bean.dto.common;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -11,13 +10,13 @@ public class MailDto implements Serializable {
 
     Vector<String> file;                            // 多个附件
     private String to;
-    @Value("${email.sendFrom}") // 收件人
+    // @Value("${email.sendFrom}") // 收件人
     private String from;    // 发件人
-    @Value("${email.host}")
+    // @Value("${email.host}")
     private String host;                            // SMTP主机
-    @Value("${email.username}")
+    // @Value("${email.username}")
     private String username;                        // 发件人的用户名
-    @Value("#configProperties{email.password}")
+    // @Value("#configProperties{email.password}")
     private String password;                        // 发件人的密码
     private String subject;                            // 邮件主题
     private String content;                            // 邮件正文

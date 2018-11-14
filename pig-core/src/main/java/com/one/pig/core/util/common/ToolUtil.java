@@ -17,6 +17,7 @@ package com.one.pig.core.util.common;
 
 import com.one.pig.config.properties.PigProperties;
 import com.one.pig.core.support.StrKit;
+import com.one.pig.core.util.time.DateUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -38,7 +39,7 @@ public class ToolUtil {
      */
     public static String dateType(Object o){
         if(o instanceof Date){
-            return DateUtil.getDay((Date) o);
+            return DateUtils.getDay((Date) o);
         }else{
             return o.toString();
         }
@@ -502,7 +503,7 @@ public class ToolUtil {
      * @Date 2017/5/7 21:56
      */
     public static String currentTime(){
-        return DateUtil.getTime();
+        return DateUtils.getTime();
     }
 
     /**

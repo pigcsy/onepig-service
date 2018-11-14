@@ -1,7 +1,7 @@
 package com.one.pig.core.util.common;
 
 
-import org.apache.commons.lang.text.StrTokenizer;
+import org.apache.commons.lang3.text.StrTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.regex.Pattern;

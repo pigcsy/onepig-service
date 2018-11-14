@@ -1,7 +1,7 @@
 package com.one.pig.core.base;
 
 
-import com.one.pig.common.persistence.model.User;
+import com.one.pig.system.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

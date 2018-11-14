@@ -3,10 +3,6 @@
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
-    <listener>
-        <listener-class>com.anniu.mid.freework.container.spring.ContainerContextLoaderListener</listener-class>
-    </listener>
-
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -40,7 +36,7 @@
 
     <filter>
         <filter-name>AccessControlAllowFilter</filter-name>
-        <filter-class>com.anniu.ordercall.core.filter.AccessControlAllowFilter</filter-class>
+        <filter-class>com.one.pig.filter.AccessControllAllowFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>AccessControlAllowFilter</filter-name>
@@ -49,11 +45,12 @@
 
     <servlet>
         <servlet-name>spring-mvc</servlet-name>
-        <servlet-class>com.anniu.mid.freework.container.spring.ContainerDispatcherServlet</servlet-class>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>spring-mvc</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
+
 </web-app>

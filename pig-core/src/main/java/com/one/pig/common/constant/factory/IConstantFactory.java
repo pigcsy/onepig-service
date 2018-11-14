@@ -2,7 +2,7 @@ package com.one.pig.common.constant.factory;
 
 import com.one.pig.common.constant.cache.Cache;
 import com.one.pig.common.constant.cache.CacheKey;
-import com.one.pig.common.persistence.model.Dict;
+import com.one.pig.system.model.Dict;
 import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;

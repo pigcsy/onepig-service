@@ -1,6 +1,5 @@
 package com.one.pig.core.util.common;
 
-import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;

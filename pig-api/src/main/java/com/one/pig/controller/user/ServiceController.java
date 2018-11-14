@@ -2,7 +2,6 @@ package com.one.pig.controller.user;
 
 
 import com.one.pig.common.controller.BaseController;
-import com.one.pig.common.persistence.dao.UserMapper;
 import com.one.pig.core.redis.RedisCacheManager;
 import com.one.pig.service.user.UserService;
 import io.swagger.annotations.Api;
@@ -12,10 +11,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-
 /**
- * 系统管理员控制器
+ * 系统管理员控制器c
  *
  * @author csy
  * @Date 2017年1月11日 下午1:08:17
@@ -26,8 +23,8 @@ import javax.annotation.Resource;
 @CrossOrigin
 public class ServiceController extends BaseController {
 
-    @Resource
-    private UserMapper userMapper;
+    // @Resource
+    // private UserMapper userMapper;
 
     @Autowired
     private UserService userService;

@@ -14,12 +14,22 @@
     <groupId>com.pig</groupId>
     <artifactId>pig-api</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <!-- 第三方 JAR 依赖 -->
     <dependencies>
         <dependency>
             <groupId>com.pig</groupId>
             <artifactId>pig-core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.pig</groupId>
+            <artifactId>pig-module</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.pig</groupId>
+            <artifactId>pig-shiro</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

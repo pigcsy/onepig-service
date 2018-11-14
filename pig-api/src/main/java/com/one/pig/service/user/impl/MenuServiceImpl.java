@@ -1,26 +1,18 @@
 package com.one.pig.service.user.impl;
 
 
-import com.one.pig.bean.dto.user.UserDto;
-import com.one.pig.common.persistence.dao.MenuMapper;
-import com.one.pig.common.persistence.dao.UserMapper;
-import com.one.pig.common.persistence.model.Menu;
-import com.one.pig.common.persistence.model.User;
-import com.one.pig.core.util.common.Convert;
-import com.one.pig.core.util.common.ConvertUtils;
-import com.one.pig.core.util.common.MenuUtils;
+import com.one.pig.core.bean.UserDto;
 import com.one.pig.service.user.MenuService;
+import com.one.pig.system.dao.MenuMapper;
+import com.one.pig.system.dao.UserMapper;
+import com.one.pig.system.model.Menu;
 import com.sun.javafx.menu.MenuBase;
-import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * 菜单服务

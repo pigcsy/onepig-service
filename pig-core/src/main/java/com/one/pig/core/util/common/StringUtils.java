@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
  *
  * @author csy
  */
-public class StringUtils extends org.apache.commons.lang.StringUtils {
+public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 一次性判断多个或单个对象为空。

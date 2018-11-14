@@ -1,17 +1,16 @@
 package com.one.pig.service.user.impl;
 
-import com.anniu.ordercall.service.user.IDeptService;
-import com.one.pig.common.persistence.dao.DeptMapper;
-import com.one.pig.common.persistence.model.Dept;
+import com.one.pig.service.user.IDeptService;
+import com.one.pig.system.dao.DeptMapper;
+import com.one.pig.system.model.Dept;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+
 @Service
-@Transactional
 public class DeptServiceImpl implements IDeptService {
 
     @Resource

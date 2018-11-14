@@ -1,6 +1,6 @@
 package com.one.pig.service.user;
 
-import com.one.pig.bean.dto.user.UserDto;
+import com.one.pig.core.bean.UserDto;
 import com.sun.javafx.menu.MenuBase;
 
 import java.util.List;

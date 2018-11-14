@@ -46,7 +46,7 @@ public class Contrast {
                     continue;
                 }
                 if (o1 instanceof Date) {
-                    o1 = DateUtil.getDay((Date) o1);
+                    o1 = DateUtils.getDay((Date) o1);
                 }
                 if (!o1.toString().equals(o2.toString())) {
                     if (i != 1) {
@@ -87,7 +87,7 @@ public class Contrast {
                     continue;
                 }
                 if (o1 instanceof Date) {
-                    o1 = DateUtil.getDay((Date) o1);
+                    o1 = DateUtils.getDay((Date) o1);
                 } else if (o1 instanceof Integer) {
                     o2 = Integer.parseInt(o2.toString());
                 }
@@ -149,7 +149,7 @@ public class Contrast {
                     continue;
                 }
                 if (o1 instanceof Date) {
-                    o1 = DateUtil.getDay((Date) o1);
+                    o1 = DateUtils.getDay((Date) o1);
                 } else if (o1 instanceof Integer) {
                     o2 = Integer.parseInt(o2.toString());
                 }

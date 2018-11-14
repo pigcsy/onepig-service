@@ -8,7 +8,6 @@ import com.alibaba.druid.support.spring.stat.DruidStatInterceptor;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
 import com.one.pig.core.listener.ConfigListener;
-import com.one.pig.core.util.xss.XssFilter;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
@@ -94,16 +93,16 @@ public class WebConfig {
     public Advisor druidStatAdvisor() {
         return new DefaultPointcutAdvisor(druidStatPointcut(), druidStatInterceptor());
     }
-
-    /**
-     * xssFilter注册
-     */
-    @Bean
-    public FilterRegistrationBean xssFilterRegistration() {
-        FilterRegistrationBean registration = new FilterRegistrationBean(new XssFilter());
-        registration.addUrlPatterns("/*");
-        return registration;
-    }
+    //
+    // /**
+    //  * xssFilter注册
+    //  */
+    // @Bean
+    // public FilterRegistrationBean xssFilterRegistration() {
+    //     FilterRegistrationBean registration = new FilterRegistrationBean(new XssFilter());
+    //     registration.addUrlPatterns("/*");
+    //     return registration;
+    // }
 
     /**
      * RequestContextListener注册
