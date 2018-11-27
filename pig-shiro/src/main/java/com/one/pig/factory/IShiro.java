@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 定义shirorealm所需数据的接口
  *
- * @author fengshuonan
+ * @author csy
  * @date 2016年12月5日 上午10:23:34
  */
 public interface IShiro {

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * fastjson配置类
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017-05-23 22:56
  */
 @Configuration

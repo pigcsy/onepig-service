@@ -1,4 +1,4 @@
-package com.one.pig.core.support;
+package com.one.pig.core.util.support;
 
 import java.io.StringReader;
 import java.io.StringWriter;

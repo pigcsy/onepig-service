@@ -5,7 +5,7 @@ import com.one.pig.core.util.common.ToolUtil;
 /**
  * 全局配置
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017-05-08 20:21
  */
 public class ContextConfig {

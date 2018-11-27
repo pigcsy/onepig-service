@@ -3,7 +3,7 @@ package com.one.pig.common.constant;
 /**
  * 字典常量
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017年5月16日21:44:56
  */
 public interface Dict {

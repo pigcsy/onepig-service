@@ -1,4 +1,4 @@
-package com.one.pig.core.support;
+package com.one.pig.core.util.support;
 
 /**
  * 分页工具类

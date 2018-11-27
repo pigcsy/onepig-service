@@ -3,7 +3,7 @@ package com.one.pig.common.constant.factory;
 import com.one.pig.common.constant.state.ManagerStatus;
 import com.one.pig.common.constant.state.MenuStatus;
 import com.one.pig.core.log.LogObjectHolder;
-import com.one.pig.core.support.StrKit;
+import com.one.pig.core.util.support.StrKit;
 import com.one.pig.core.util.common.Convert;
 import com.one.pig.core.util.common.SpringContextHolder;
 import com.one.pig.core.util.common.ToolUtil;
@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * 常量的生产工厂
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017年2月13日 下午10:55:21
  */
 @Component

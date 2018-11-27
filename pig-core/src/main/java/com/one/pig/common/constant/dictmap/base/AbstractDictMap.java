@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * 字典映射抽象类
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017-05-06 14:58
  */
 public abstract class AbstractDictMap {

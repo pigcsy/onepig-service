@@ -5,7 +5,7 @@ import com.one.pig.common.constant.dictmap.base.AbstractDictMap;
 /**
  * 日志的字典
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017-05-06 15:01
  */
 public class LogDict extends AbstractDictMap {

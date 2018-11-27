@@ -3,7 +3,7 @@ package com.one.pig.core.template.config;
 /**
  * Dao模板生成的配置
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017-05-07 22:12
  */
 public class DaoConfig {

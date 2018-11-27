@@ -3,7 +3,7 @@ package com.one.pig.core.util.common;
 import com.one.pig.common.constant.dictmap.base.AbstractDictMap;
 import com.one.pig.common.constant.dictmap.factory.DictFieldWarpperFactory;
 import com.one.pig.common.constant.dictmap.factory.DictMapFactory;
-import com.one.pig.core.support.StrKit;
+import com.one.pig.core.util.support.StrKit;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * 对比两个对象的变化的工具类
  *
- * @author fengshuonan
+ * @author csy
  * @Date 2017/3/31 10:36
  */
 public class Contrast {

@@ -3,7 +3,7 @@ package com.one.pig.common.constant.state;
 /**
  * 管理员的状态
  *
- * @author fengshuonan
+ * @author csy
  * @Date 2017年1月10日 下午9:54:13
  */
 public enum ManagerStatus {

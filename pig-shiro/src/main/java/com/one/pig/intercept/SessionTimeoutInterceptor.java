@@ -2,7 +2,7 @@ package com.one.pig.intercept;
 
 import com.one.pig.ShiroUtil;
 import com.one.pig.common.controller.BaseController;
-import com.one.pig.core.support.HttpKit;
+import com.one.pig.core.util.support.HttpKit;
 import org.apache.shiro.session.InvalidSessionException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 /**
  * 验证session超时的拦截器
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017年6月7日21:08:48
  */
 @Aspect

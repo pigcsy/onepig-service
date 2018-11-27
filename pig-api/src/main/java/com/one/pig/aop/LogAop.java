@@ -8,7 +8,7 @@ import com.one.pig.common.constant.dictmap.factory.DictMapFactory;
 import com.one.pig.core.log.LogManager;
 import com.one.pig.core.log.LogObjectHolder;
 import com.one.pig.core.log.factory.LogTaskFactory;
-import com.one.pig.core.support.HttpKit;
+import com.one.pig.core.util.support.HttpKit;
 import com.one.pig.core.util.common.Contrast;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * 日志记录
  *
- * @author fengshuonan
+ * @author csy
  * @date 2016年12月6日 下午8:48:30
  */
 @Aspect
@@ -101,6 +101,6 @@ public class LogAop {
             msg = Contrast.parseMutiKey(dictMap,key,parameters);
         }
 
-        LogManager.me().executeLog(LogTaskFactory.bussinessLog(user.getId(), bussinessName, className, methodName, msg));
+        LogManager.me().executeLog(LogTaskFactory.bussinessLog(user.getUserId(), bussinessName, className, methodName, msg));
     }
 }

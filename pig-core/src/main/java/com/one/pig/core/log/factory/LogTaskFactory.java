@@ -17,7 +17,7 @@ import java.util.TimerTask;
 /**
  * 日志操作任务创建工厂
  *
- * @author fengshuonan
+ * @author csy
  * @date 2016年12月6日 下午9:18:27
  */
 public class LogTaskFactory {

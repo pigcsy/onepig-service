@@ -29,7 +29,7 @@ public interface DictMapper extends Mapper<Dict> {
     /**
      * 查询字典列表
      *
-     * @author fengshuonan
+     * @author csy
      * @Date 2017/4/26 13:04
      */
     List<Map<String, Object>> list(@Param("condition") String conditiion);

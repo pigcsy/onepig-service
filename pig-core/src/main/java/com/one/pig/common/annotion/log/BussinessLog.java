@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 /**
  * 标记需要做业务日志的方法
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017-03-31 12:46
  */
 @Inherited

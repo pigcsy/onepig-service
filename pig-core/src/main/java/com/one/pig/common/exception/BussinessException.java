@@ -2,7 +2,7 @@ package com.one.pig.common.exception;
 
 /**
  * @Description 业务异常的封装
- * @author fengshuonan
+ * @author csy
  * @date 2016年11月12日 下午5:05:10
  */
 @SuppressWarnings("serial")

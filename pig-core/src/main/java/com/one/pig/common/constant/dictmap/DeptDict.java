@@ -5,7 +5,7 @@ import com.one.pig.common.constant.dictmap.base.AbstractDictMap;
 /**
  * 部门的映射
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017-05-06 15:01
  */
 public class DeptDict extends AbstractDictMap {

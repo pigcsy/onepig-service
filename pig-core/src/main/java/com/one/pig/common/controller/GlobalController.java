@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * 全局的控制器
  *
- * @author fengshuonan
+ * @author csy
  * @date 2016年11月13日 下午11:04:45
  */
 @Controller
@@ -17,7 +17,7 @@ public class GlobalController {
     /**
      * 跳转到404页面
      *
-     * @author fengshuonan
+     * @author csy
      */
     @RequestMapping(path = "/error")
     public String errorPage() {
@@ -27,7 +27,7 @@ public class GlobalController {
     /**
      * 跳转到session超时页面
      *
-     * @author fengshuonan
+     * @author csy
      */
     @RequestMapping(path = "/sessionError")
     public String errorPageInfo(Model model) {

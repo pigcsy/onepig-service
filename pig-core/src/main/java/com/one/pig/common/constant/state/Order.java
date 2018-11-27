@@ -3,7 +3,7 @@ package com.one.pig.common.constant.state;
 /**
  * 数据库排序
  *
- * @author fengshuonan
+ * @author csy
  * @Date 2017年5月31日20:48:41
  */
 public enum Order {

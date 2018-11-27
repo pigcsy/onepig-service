@@ -2,7 +2,7 @@ package com.one.pig.core.util.common;
 
 
 import com.one.pig.common.exception.ToolBoxException;
-import com.one.pig.core.support.BasicType;
+import com.one.pig.core.util.support.BasicType;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;

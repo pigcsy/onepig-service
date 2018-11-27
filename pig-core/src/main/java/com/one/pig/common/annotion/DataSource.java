@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * 
  * 多数据源标识
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017年3月5日 上午9:44:24
  */
 @Inherited

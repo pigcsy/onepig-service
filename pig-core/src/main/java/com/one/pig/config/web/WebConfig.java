@@ -23,7 +23,7 @@ import java.util.Properties;
 /**
  * web 配置类
  *
- * @author fengshuonan
+ * @author csy
  * @date 2016年11月12日 下午5:03:32
  */
 @Configuration

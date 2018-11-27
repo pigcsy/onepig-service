@@ -8,7 +8,7 @@ import com.one.pig.common.exception.BussinessException;
 /**
  * 字典的创建工厂
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017-05-06 15:12
  */
 public class DictMapFactory {

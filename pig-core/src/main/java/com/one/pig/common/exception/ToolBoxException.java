@@ -15,7 +15,7 @@
  */
 package com.one.pig.common.exception;
 
-import com.one.pig.core.support.StrKit;
+import com.one.pig.core.util.support.StrKit;
 
 /**
  * 工具类初始化异常

@@ -1,4 +1,4 @@
-package com.one.pig.core.support;
+package com.one.pig.core.util.support;
 
 /**
  * 一些通用的函数

@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * swagger配置类
  *
- * @author fengshuonan
+ * @author csy
  * @date 2017年6月1日19:42:59
  */
 @Configuration

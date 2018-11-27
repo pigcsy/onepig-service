@@ -4,7 +4,7 @@ package com.one.pig.system.bean.node;
  * 
  * jquery ztree 插件的节点
  * 
- * @author fengshuonan
+ * @author csy
  * @date 2017年2月17日 下午8:25:14
  */
 public class ZTreeNode {
