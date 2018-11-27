@@ -21,7 +21,7 @@ public class GlobalController {
      */
     @RequestMapping(path = "/error")
     public String errorPage() {
-        return "/404.html";
+        return "/WEB-INF/view/404.html";
     }
 
     /**

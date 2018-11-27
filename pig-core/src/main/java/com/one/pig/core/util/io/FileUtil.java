@@ -532,4 +532,16 @@ public class FileUtil {
 	public static String getFileExtension(String fullName) {
 		return com.google.common.io.Files.getFileExtension(fullName);
 	}
+
+
+	public static void main(String[] args) {
+		File file = new File("/Users/chenshiyue/Downloads/qqwry.dat-master/20180910/qqwry.dat");
+String a="";
+		try {
+			a=FileUtil.toString(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println(a);
+	}
 }

@@ -1,16 +1,21 @@
 package com.one.pig.config;
 
-import io.swagger.annotations.ApiOperation;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Parameter;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * swagger配置类
@@ -22,25 +27,29 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @ConditionalOnProperty(prefix = "pig", name = "swagger-open", havingValue = "true")
 public class SwaggerConfig{
-
     @Bean
     public Docket createRestApi() {
+        ParameterBuilder tokenPar = new ParameterBuilder();
+        List<Parameter> pars = new ArrayList<Parameter>();
+        tokenPar.name("token").description("令牌")
+                .modelRef(new ModelRef("string")).parameterType("query").required(false).build();
+        pars.add(tokenPar.build());
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))                         //这里采用包含注解的方式来确定要显示的接口
-                //.apis(RequestHandlerSelectors.basePackage("com.stylefeng.pig.modular.system.controller"))    //这里采用包扫描的方式来确定要显示的接口
+                .apis(RequestHandlerSelectors.basePackage("com.one.pig.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build().globalOperationParameters(pars)  ;
     }
 
+    @SuppressWarnings("deprecation")
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Pig Doc")
-                .description("OnePig Api文档")
+                .title("onepig")
+                .description("onepigapi")
                 .termsOfServiceUrl("www.onepig.info")
-                .contact("csy")
-                .version("2.0")
+                .contact("测试")
+                .version("1.0")
                 .build();
     }
 

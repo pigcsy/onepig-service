@@ -15,14 +15,18 @@ pig:
 
 ###################  项目启动端口  ###################
 server:
-  port: 8082
+  port: 8080
+  tomcat:
+    accept-count: 100
+    accesslog:
+      directory: logs
+    uri-encoding: utf-8
 
 
 ###################  MyBatis 配置  ###################
 mybatis:
   type-aliases-package: com.one.pig
   mapper-locations: classpath:mapper/*.xml
-
 
 ###################  MyBatis 分页插件配置  ###################
 pagehelper:
@@ -43,7 +47,7 @@ beetl:
 ###################  spring配置  ###################
 spring:
   redis:
-    host: 47.98.107.248
+    host: 127.0.0.1
     port: 6379
     password:
     jedis:
@@ -103,7 +107,7 @@ spring:
   datasource:
     url: jdbc:mysql://47.98.107.248:3306/one_pig?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
     username: root
-    password: csy458721
+    password: 458721928@qqCom
     filters: log4j,wall,mergeStat
 
 #多数据源
@@ -111,7 +115,7 @@ biz:
   datasource:
     url: jdbc:mysql://47.98.107.248:3306/biz?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
     username: root
-    password: csy458721
+    password: 458721928@qqCom
 
 logging:
   level.root: info
@@ -129,7 +133,7 @@ spring:
   datasource:
     url: jdbc:mysql://47.98.107.248:3306/one_pig?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
     username: root
-    password: csy458721
+    password: 458721928@qqCom
     filters: log4j,wall,mergeStat
 
 logging:
