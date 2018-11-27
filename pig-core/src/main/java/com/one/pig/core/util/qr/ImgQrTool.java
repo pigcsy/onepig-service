@@ -28,14 +28,12 @@ import java.util.Map;
  */
 public class ImgQrTool {
 
-    private static Logger log = LoggerFactory.getLogger(ImgQrTool.class);
-
     // 镶嵌的图片宽度的一般
     private static final int IMAGE_WIDTH = 80;
     private static final int IMAGE_HEIGHT = 80;
     private static final int IMAGE_HALF_WIDTH = IMAGE_WIDTH / 2;
     private static final int FRAME_WIDTH = 2;
-
+    private static Logger log = LoggerFactory.getLogger(ImgQrTool.class);
     // 二维码写码器
     private static MultiFormatWriter mutiWriter = new MultiFormatWriter();
 
@@ -61,12 +59,11 @@ public class ImgQrTool {
     }
 
     /**
-     *
-     * @param content       二维码的内容
-     * @param width         宽度
-     * @param height        高度
-     * @param srcImagePath  被镶嵌的图片的地址
-     * @param outputStream  生成二维码图片的地址
+     * @param content      二维码的内容
+     * @param width        宽度
+     * @param height       高度
+     * @param srcImagePath 被镶嵌的图片的地址
+     * @param outputStream 生成二维码图片的地址
      */
     public static void encode(String content, int width, int height, String srcImagePath, OutputStream outputStream) {
         try {

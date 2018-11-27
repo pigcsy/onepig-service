@@ -11,8 +11,8 @@ public class PageReq implements Serializable {
 
     private Integer limit;
     private Integer offset;
-    private String  sort;
-    private String  order;
+    private String sort;
+    private String order;
     private boolean openSort;
     private boolean asc;
 

@@ -26,7 +26,7 @@ public class LoggerUtils {
      * 是否开启Debug
      */
 
-    public static boolean isDebug  = LoggerFactory.getLogger(LoggerUtils.class).isDebugEnabled();
+    public static boolean isDebug = LoggerFactory.getLogger(LoggerUtils.class).isDebugEnabled();
 
     /**
      * Debug 输出

@@ -1,7 +1,6 @@
 package com.one.pig.common.constant;
 
 /**
- * 
  * 多数据源的枚举
  *
  * @author csy
@@ -9,7 +8,7 @@ package com.one.pig.common.constant;
  */
 public interface DSEnum {
 
-	String DATA_SOURCE_PIG = "dataSourcePig";		//pig数据源
-	
-	String DATA_SOURCE_BIZ = "dataSourceBiz";			//其他业务的数据源
+    String DATA_SOURCE_PIG = "dataSourcePig";        //pig数据源
+
+    String DATA_SOURCE_BIZ = "dataSourceBiz";            //其他业务的数据源
 }

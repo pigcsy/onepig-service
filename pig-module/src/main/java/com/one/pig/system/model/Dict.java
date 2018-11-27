@@ -25,11 +25,11 @@ public class Dict extends Base {
     /**
      * 名称
      */
-    private String  name;
+    private String name;
     /**
      * 提示
      */
-    private String  tips;
+    private String tips;
 
 
     public Integer getId() {

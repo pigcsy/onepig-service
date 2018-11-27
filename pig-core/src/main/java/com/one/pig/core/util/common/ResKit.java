@@ -32,7 +32,7 @@ public class ResKit {
      * @author csy
      */
     public static String getClassPathFile(String file) {
-		//return ResKit.class.getClassLoader().getResource(file).getPath();
+        //return ResKit.class.getClassLoader().getResource(file).getPath();
         return Thread.currentThread().getContextClassLoader().getResource(file).getPath();
     }
 }

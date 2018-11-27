@@ -19,11 +19,11 @@ public class OperationLog extends Base {
     /**
      * 日志类型
      */
-    private String  logtype;
+    private String logtype;
     /**
      * 日志名称
      */
-    private String  logname;
+    private String logname;
     /**
      * 用户id
      */
@@ -31,23 +31,23 @@ public class OperationLog extends Base {
     /**
      * 类名称
      */
-    private String  classname;
+    private String classname;
     /**
      * 方法名称
      */
-    private String  method;
+    private String method;
     /**
      * 创建时间
      */
-    private Date    createtime;
+    private Date createtime;
     /**
      * 是否成功
      */
-    private String  succeed;
+    private String succeed;
     /**
      * 备注
      */
-    private String  message;
+    private String message;
 
 
     public Integer getId() {

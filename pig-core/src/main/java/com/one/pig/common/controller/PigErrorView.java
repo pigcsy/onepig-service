@@ -14,7 +14,7 @@ import java.util.Map;
  * @date 2017-05-21 11:34
  */
 @Component("error")
-public class PigErrorView implements View{
+public class PigErrorView implements View {
 
     @Override
     public String getContentType() {
@@ -23,6 +23,6 @@ public class PigErrorView implements View{
 
     @Override
     public void render(Map<String, ?> map, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        httpServletRequest.getRequestDispatcher("/global/error").forward(httpServletRequest,httpServletResponse);
+        httpServletRequest.getRequestDispatcher("/global/error").forward(httpServletRequest, httpServletResponse);
     }
 }

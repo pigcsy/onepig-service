@@ -57,6 +57,5 @@ public interface UserService {
     void editUserStatus(Integer userId, String status);
 
 
-
     void editUser(Integer userId, String name, String password);
 }

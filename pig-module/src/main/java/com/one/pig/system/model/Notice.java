@@ -18,7 +18,7 @@ public class Notice extends Base {
     /**
      * 标题
      */
-    private String  title;
+    private String title;
     /**
      * 类型
      */
@@ -26,11 +26,11 @@ public class Notice extends Base {
     /**
      * 内容
      */
-    private String  content;
+    private String content;
     /**
      * 创建时间
      */
-    private Date    createtime;
+    private Date createtime;
     /**
      * 创建人
      */

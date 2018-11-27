@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * <p>
-  * 通知表 Mapper 接口
+ * 通知表 Mapper 接口
  * </p>
  *
  * @author stylefeng

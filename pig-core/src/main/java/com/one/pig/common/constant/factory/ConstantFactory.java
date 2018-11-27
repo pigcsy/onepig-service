@@ -3,10 +3,10 @@ package com.one.pig.common.constant.factory;
 import com.one.pig.common.constant.state.ManagerStatus;
 import com.one.pig.common.constant.state.MenuStatus;
 import com.one.pig.core.log.LogObjectHolder;
-import com.one.pig.core.util.support.StrKit;
 import com.one.pig.core.util.common.Convert;
 import com.one.pig.core.util.common.SpringContextHolder;
 import com.one.pig.core.util.common.ToolUtil;
+import com.one.pig.core.util.support.StrKit;
 import com.one.pig.system.dao.DeptMapper;
 import com.one.pig.system.dao.DictMapper;
 import com.one.pig.system.dao.MenuMapper;
@@ -309,7 +309,7 @@ public class ConstantFactory implements IConstantFactory {
 
         ArrayList<Integer> deptids = new ArrayList<>();
 
-        if(depts != null || depts.size() > 0){
+        if (depts != null || depts.size() > 0) {
             for (Dept dept : depts) {
                 deptids.add(dept.getId());
             }

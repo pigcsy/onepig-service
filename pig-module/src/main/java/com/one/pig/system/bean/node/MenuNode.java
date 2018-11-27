@@ -73,6 +73,70 @@ public class MenuNode implements Comparable {
         this.parentId = parentId;
     }
 
+    public static MenuNode createRoot() {
+        return new MenuNode(0, -1);
+    }
+
+    /**
+     * 清除掉按钮级别的资源
+     *
+     * @date 2017年2月19日 下午11:04:11
+     */
+    public static List<MenuNode> clearBtn(List<MenuNode> nodes) {
+        ArrayList<MenuNode> noBtns = new ArrayList<MenuNode>();
+        for (MenuNode node : nodes) {
+            if (node.getIsmenu() == IsMenu.YES.getCode()) {
+                noBtns.add(node);
+            }
+        }
+        return noBtns;
+    }
+
+    /**
+     * 清除所有二级菜单
+     *
+     * @date 2017年2月19日 下午11:18:19
+     */
+    public static List<MenuNode> clearLevelTwo(List<MenuNode> nodes) {
+        ArrayList<MenuNode> results = new ArrayList<MenuNode>();
+        for (MenuNode node : nodes) {
+            Integer levels = node.getLevels();
+            if (levels.equals(1)) {
+                results.add(node);
+            }
+        }
+        return results;
+    }
+
+    /**
+     * 构建菜单列表
+     *
+     * @date 2017年2月19日 下午11:18:19
+     */
+    public static List<MenuNode> buildTitle(List<MenuNode> nodes) {
+
+        List<MenuNode> clearBtn = clearBtn(nodes);
+
+        new MenuNode().buildNodeTree(clearBtn);
+
+        List<MenuNode> menuNodes = clearLevelTwo(clearBtn);
+
+        //对菜单排序
+        Collections.sort(menuNodes);
+
+        //对菜单的子菜单进行排序
+        for (MenuNode menuNode : menuNodes) {
+            if (menuNode.getChildren() != null && menuNode.getChildren().size() > 0) {
+                Collections.sort(menuNode.getChildren());
+            }
+        }
+
+        //如果关闭了接口文档,则不显示接口文档菜单
+
+
+        return menuNodes;
+    }
+
     public Integer getLevels() {
         return levels;
     }
@@ -87,10 +151,6 @@ public class MenuNode implements Comparable {
 
     public void setIcon(String icon) {
         this.icon = icon;
-    }
-
-    public static MenuNode createRoot() {
-        return new MenuNode(0, -1);
     }
 
     public Integer getId() {
@@ -245,65 +305,5 @@ public class MenuNode implements Comparable {
             }
         }
         return nodeList;
-    }
-
-    /**
-     * 清除掉按钮级别的资源
-     *
-     * @date 2017年2月19日 下午11:04:11
-     */
-    public static List<MenuNode> clearBtn(List<MenuNode> nodes) {
-        ArrayList<MenuNode> noBtns = new ArrayList<MenuNode>();
-        for (MenuNode node : nodes) {
-            if(node.getIsmenu() == IsMenu.YES.getCode()){
-                noBtns.add(node);
-            }
-        }
-        return noBtns;
-    }
-
-    /**
-     * 清除所有二级菜单
-     *
-     * @date 2017年2月19日 下午11:18:19
-     */
-    public static List<MenuNode> clearLevelTwo(List<MenuNode> nodes) {
-        ArrayList<MenuNode> results = new ArrayList<MenuNode>();
-        for (MenuNode node : nodes) {
-            Integer levels = node.getLevels();
-            if (levels.equals(1)) {
-                results.add(node);
-            }
-        }
-        return results;
-    }
-
-    /**
-     * 构建菜单列表
-     *
-     * @date 2017年2月19日 下午11:18:19
-     */
-    public static List<MenuNode> buildTitle(List<MenuNode> nodes) {
-
-        List<MenuNode> clearBtn = clearBtn(nodes);
-
-        new MenuNode().buildNodeTree(clearBtn);
-
-        List<MenuNode> menuNodes = clearLevelTwo(clearBtn);
-
-        //对菜单排序
-        Collections.sort(menuNodes);
-
-        //对菜单的子菜单进行排序
-        for (MenuNode menuNode : menuNodes) {
-            if (menuNode.getChildren() != null && menuNode.getChildren().size() > 0) {
-                Collections.sort(menuNode.getChildren());
-            }
-        }
-
-        //如果关闭了接口文档,则不显示接口文档菜单
-
-
-        return menuNodes;
     }
 }

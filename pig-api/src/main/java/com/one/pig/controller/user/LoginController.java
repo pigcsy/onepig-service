@@ -59,7 +59,6 @@ public class LoginController extends BaseController {
     UserMapper userMapper;
 
 
-
     /**
      * 点击登录执行的动作
      */

@@ -5,8 +5,8 @@ import com.one.pig.common.constant.tips.SuccessTip;
 import com.one.pig.common.page.PageInfoBT;
 import com.one.pig.common.page.PageReq;
 import com.one.pig.common.warpper.BaseControllerWarpper;
-import com.one.pig.core.util.support.HttpKit;
 import com.one.pig.core.util.common.ToolUtil;
+import com.one.pig.core.util.support.HttpKit;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -74,7 +74,7 @@ public class BaseController {
         if (ToolUtil.isEmpty(sort)) {
             pageReq.setOpenSort(false);
         } else {
-        	pageReq.setOpenSort(true);
+            pageReq.setOpenSort(true);
             if (Order.ASC.getDes().equals(order)) {
                 pageReq.setAsc(true);
             } else {

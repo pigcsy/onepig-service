@@ -26,7 +26,7 @@ public class Role extends Base {
     /**
      * 角色名称
      */
-    private String  name;
+    private String name;
     /**
      * 部门名称
      */
@@ -34,7 +34,7 @@ public class Role extends Base {
     /**
      * 提示
      */
-    private String  tips;
+    private String tips;
     /**
      * 保留字段(暂时没用）
      */

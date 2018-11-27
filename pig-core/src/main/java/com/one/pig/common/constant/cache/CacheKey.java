@@ -18,7 +18,7 @@ public interface CacheKey {
     String SINGLE_ROLE_TIP = "single_role_tip_";
 
     String DEPT_NAME = "dept_name_";
-    
+
     String DICT_NAME = "dict_name_";
 
 

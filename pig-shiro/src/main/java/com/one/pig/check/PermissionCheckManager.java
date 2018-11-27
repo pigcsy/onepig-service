@@ -26,10 +26,6 @@ public class PermissionCheckManager {
 
     private ICheck defaultCheckFactory = SpringContextHolder.getBean(ICheck.class);
 
-    public static PermissionCheckManager me() {
-        return me;
-    }
-
     private PermissionCheckManager() {
     }
 
@@ -37,8 +33,8 @@ public class PermissionCheckManager {
         this.defaultCheckFactory = checkFactory;
     }
 
-    public void setDefaultCheckFactory(ICheck defaultCheckFactory) {
-        this.defaultCheckFactory = defaultCheckFactory;
+    public static PermissionCheckManager me() {
+        return me;
     }
 
     public static boolean check(Object[] permissions) {
@@ -47,5 +43,9 @@ public class PermissionCheckManager {
 
     public static boolean checkAll() {
         return me.defaultCheckFactory.checkAll();
+    }
+
+    public void setDefaultCheckFactory(ICheck defaultCheckFactory) {
+        this.defaultCheckFactory = defaultCheckFactory;
     }
 }

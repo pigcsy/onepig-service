@@ -5,7 +5,6 @@ import com.one.pig.system.bean.node.MenuNode;
 import com.one.pig.system.bean.node.ZTreeNode;
 import com.one.pig.system.model.Menu;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
@@ -14,7 +13,7 @@ import java.util.Map;
 
 /**
  * <p>
-  * 菜单表 Mapper 接口
+ * 菜单表 Mapper 接口
  * </p>
  *
  * @author stylefeng

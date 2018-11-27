@@ -42,7 +42,7 @@ public class MenuServiceImpl implements MenuService {
         //     return null;
         // Set<MenuBase> menus = menuBaseList.stream().map(target -> new MenuBase(target.getId(), target.getUrl(), target.getCode(), target.getNum(), target.getPcode(), target.getIcon(), target.getIsmenu(), target.getName(), target.getStatus(), target.getTips(), target.getLevels())).collect(Collectors.toSet());
         // return MenuUtils.format(MenuEnums.LevelEnum.SECOND, menus).stream().collect(Collectors.toList());
-return null;
+        return null;
     }
 
     @Override

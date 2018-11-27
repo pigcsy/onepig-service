@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @EnableSwagger2
 @SpringBootApplication(scanBasePackages = "com.one.pig")
-public class PigApplication  {
+public class PigApplication {
 
     protected final static Logger logger = LoggerFactory.getLogger(PigApplication.class);
 
@@ -23,7 +23,6 @@ public class PigApplication  {
         logger.info("PigApplication is success!");
 
     }
-
 
 
 }

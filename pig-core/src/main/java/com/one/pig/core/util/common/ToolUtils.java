@@ -16,7 +16,6 @@
 package com.one.pig.core.util.common;
 
 
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -423,7 +422,7 @@ public class ToolUtils {
      * map的key转为小写
      *
      * @param map
-     * @return Map<String                                                                                                                               ,                                                                                                                               Object>
+     * @return Map<String                                                                                                                                                                                                                                                               ,                                                                                                                                                                                                                                                               Object>
      */
     public static Map<String, Object> caseInsensitiveMap(Map<String, Object> map) {
         Map<String, Object> tempMap = new HashMap<>();

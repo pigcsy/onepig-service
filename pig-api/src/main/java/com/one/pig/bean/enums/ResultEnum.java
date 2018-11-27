@@ -3,9 +3,10 @@ package com.one.pig.bean.enums;
 /**
  * 结果枚举配置
  * -- 返回码和描述枚举
+ *
+ * @author 花花
  * @ClassName: ResultEnum
  * @DetaTime 2018-03-13 09:48:32
- * @author 花花
  */
 public enum ResultEnum {
 

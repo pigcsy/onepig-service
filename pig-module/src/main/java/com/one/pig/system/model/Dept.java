@@ -25,19 +25,19 @@ public class Dept extends Base {
     /**
      * 父级ids
      */
-    private String  pids;
+    private String pids;
     /**
      * 简称
      */
-    private String  simplename;
+    private String simplename;
     /**
      * 全称
      */
-    private String  fullname;
+    private String fullname;
     /**
      * 提示
      */
-    private String  tips;
+    private String tips;
     /**
      * 版本（乐观锁保留字段）
      */

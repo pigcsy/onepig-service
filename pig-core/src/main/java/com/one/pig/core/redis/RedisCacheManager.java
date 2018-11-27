@@ -27,13 +27,24 @@ import java.util.concurrent.TimeUnit;
 
 @Component
 public class RedisCacheManager implements CacheManager {
+    // expire time in seconds
+    public static final int DEFAULT_EXPIRE = 1800;
+    /**
+     * The Redis key prefix for caches
+     */
+    public static final String DEFAULT_CACHE_KEY_PREFIX = "shiro:cache:";
+    public static final String DEFAULT_PRINCIPAL_ID_FIELD_NAME = "id";
     private static int DEFAULT_EXPIRE_TIME = 60;
+    private final ConcurrentMap<String, Cache> caches = new ConcurrentHashMap<String, Cache>();
     Logger logger = LoggerFactory.getLogger(this.getClass());
-
-    private RedisManager redisManager;
-
     @Resource
     RedisTemplate<String, Object> redisTemplate;
+    private RedisManager redisManager;
+    private RedisSerializer keySerializer = new StringSerializer();
+    private RedisSerializer valueSerializer = new ObjectSerializer();
+    private int expire = DEFAULT_EXPIRE;
+    private String keyPrefix = DEFAULT_CACHE_KEY_PREFIX;
+    private String principalIdFieldName = DEFAULT_PRINCIPAL_ID_FIELD_NAME;
 
     public RedisCacheManager() {
     }
@@ -184,29 +195,10 @@ public class RedisCacheManager implements CacheManager {
         return redisTemplate.boundSetOps(key).isMember(obj);
     }
 
-
-    private final ConcurrentMap<String, Cache> caches = new ConcurrentHashMap<String, Cache>();
-
-
-    private RedisSerializer keySerializer = new StringSerializer();
-    private RedisSerializer valueSerializer = new ObjectSerializer();
-
-    // expire time in seconds
-    public static final int DEFAULT_EXPIRE = 1800;
-    private int expire = DEFAULT_EXPIRE;
-
-    /**
-     * The Redis key prefix for caches
-     */
-    public static final String DEFAULT_CACHE_KEY_PREFIX = "shiro:cache:";
-    private String keyPrefix = DEFAULT_CACHE_KEY_PREFIX;
-
-    public static final String DEFAULT_PRINCIPAL_ID_FIELD_NAME = "id";
-    private String principalIdFieldName = DEFAULT_PRINCIPAL_ID_FIELD_NAME;
-
     /**
      * Returns the Redis session keys
      * prefix.
+     *
      * @return The prefix
      */
     public String getKeyPrefix() {
@@ -220,7 +212,7 @@ public class RedisCacheManager implements CacheManager {
         Cache c = caches.get(name);
 
         if (c == null) {
-            RedisManager redisManager=new RedisManager();
+            RedisManager redisManager = new RedisManager();
 
             // initialize the Redis manager instance
 

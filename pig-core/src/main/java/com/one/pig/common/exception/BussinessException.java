@@ -1,50 +1,50 @@
 package com.one.pig.common.exception;
 
 /**
- * @Description 业务异常的封装
  * @author csy
+ * @Description 业务异常的封装
  * @date 2016年11月12日 下午5:05:10
  */
 @SuppressWarnings("serial")
-public class BussinessException extends RuntimeException{
+public class BussinessException extends RuntimeException {
 
-	//友好提示的code码
-	private int friendlyCode;
-	
-	//友好提示
-	private String friendlyMsg;
-	
-	//业务异常跳转的页面
-	private String urlPath;
-	
-	public BussinessException(BizExceptionEnum bizExceptionEnum){
-		this.friendlyCode = bizExceptionEnum.getCode();
-		this.friendlyMsg = bizExceptionEnum.getMessage();
-		this.urlPath = bizExceptionEnum.getUrlPath();
-	}
+    //友好提示的code码
+    private int friendlyCode;
 
-	public int getCode() {
-		return friendlyCode;
-	}
+    //友好提示
+    private String friendlyMsg;
 
-	public void setCode(int code) {
-		this.friendlyCode = code;
-	}
+    //业务异常跳转的页面
+    private String urlPath;
 
-	public String getMessage() {
-		return friendlyMsg;
-	}
+    public BussinessException(BizExceptionEnum bizExceptionEnum) {
+        this.friendlyCode = bizExceptionEnum.getCode();
+        this.friendlyMsg = bizExceptionEnum.getMessage();
+        this.urlPath = bizExceptionEnum.getUrlPath();
+    }
 
-	public void setMessage(String message) {
-		this.friendlyMsg = message;
-	}
+    public int getCode() {
+        return friendlyCode;
+    }
 
-	public String getUrlPath() {
-		return urlPath;
-	}
+    public void setCode(int code) {
+        this.friendlyCode = code;
+    }
 
-	public void setUrlPath(String urlPath) {
-		this.urlPath = urlPath;
-	}
-	
+    public String getMessage() {
+        return friendlyMsg;
+    }
+
+    public void setMessage(String message) {
+        this.friendlyMsg = message;
+    }
+
+    public String getUrlPath() {
+        return urlPath;
+    }
+
+    public void setUrlPath(String urlPath) {
+        this.urlPath = urlPath;
+    }
+
 }

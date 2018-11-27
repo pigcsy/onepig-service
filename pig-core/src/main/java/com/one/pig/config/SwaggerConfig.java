@@ -26,7 +26,7 @@ import java.util.List;
 @Configuration
 @EnableSwagger2
 @ConditionalOnProperty(prefix = "pig", name = "swagger-open", havingValue = "true")
-public class SwaggerConfig{
+public class SwaggerConfig {
     @Bean
     public Docket createRestApi() {
         ParameterBuilder tokenPar = new ParameterBuilder();
@@ -39,7 +39,7 @@ public class SwaggerConfig{
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.one.pig.controller"))
                 .paths(PathSelectors.any())
-                .build().globalOperationParameters(pars)  ;
+                .build().globalOperationParameters(pars);
     }
 
     @SuppressWarnings("deprecation")

@@ -3,21 +3,21 @@
 <mapper namespace="com.one.pig.system.dao.MenuMapper">
 
     <!-- 通用查询映射结果 -->
-	<resultMap id="BaseResultMap" type="com.one.pig.system.model.Menu">
+    <resultMap id="BaseResultMap" type="com.one.pig.system.model.Menu">
         <id column="id" property="id"/>
-		<result column="code" property="code" />
-		<result column="pcode" property="pcode" />
-        <result column="pcodes" property="pcodes" />
-		<result column="name" property="name" />
-		<result column="icon" property="icon" />
-		<result column="url" property="url" />
-		<result column="num" property="num" />
-		<result column="levels" property="levels" />
-		<result column="ismenu" property="ismenu" />
-		<result column="tips" property="tips" />
-		<result column="status" property="status" />
-		<result column="isopen" property="isopen" />
-	</resultMap>
+        <result column="code" property="code"/>
+        <result column="pcode" property="pcode"/>
+        <result column="pcodes" property="pcodes"/>
+        <result column="name" property="name"/>
+        <result column="icon" property="icon"/>
+        <result column="url" property="url"/>
+        <result column="num" property="num"/>
+        <result column="levels" property="levels"/>
+        <result column="ismenu" property="ismenu"/>
+        <result column="tips" property="tips"/>
+        <result column="status" property="status"/>
+        <result column="isopen" property="isopen"/>
+    </resultMap>
 
 
     <sql id="Base_Column_List">

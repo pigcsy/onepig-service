@@ -8,10 +8,10 @@ package com.one.pig.common.constant;
  */
 public class Cst {
 
+    private static Cst cst = new Cst();
+
     private Cst() {
     }
-
-    private static Cst cst = new Cst();
 
     public static Cst me() {
         return cst;

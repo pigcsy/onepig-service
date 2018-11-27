@@ -1,15 +1,15 @@
 package com.one.pig.aop;
 
-import com.one.pig.ShiroUtil;
 import com.one.pig.ShiroUser;
+import com.one.pig.ShiroUtil;
 import com.one.pig.common.annotion.log.BussinessLog;
 import com.one.pig.common.constant.dictmap.base.AbstractDictMap;
 import com.one.pig.common.constant.dictmap.factory.DictMapFactory;
 import com.one.pig.core.log.LogManager;
 import com.one.pig.core.log.LogObjectHolder;
 import com.one.pig.core.log.factory.LogTaskFactory;
-import com.one.pig.core.util.support.HttpKit;
 import com.one.pig.core.util.common.Contrast;
+import com.one.pig.core.util.support.HttpKit;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
@@ -98,7 +98,7 @@ public class LogAop {
         } else {
             Map<String, String> parameters = HttpKit.getRequestParameters();
             AbstractDictMap dictMap = DictMapFactory.createDictMap(dictClass);
-            msg = Contrast.parseMutiKey(dictMap,key,parameters);
+            msg = Contrast.parseMutiKey(dictMap, key, parameters);
         }
 
         LogManager.me().executeLog(LogTaskFactory.bussinessLog(user.getUserId(), bussinessName, className, methodName, msg));

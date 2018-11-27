@@ -5,9 +5,10 @@ import com.one.pig.core.exception.ApiException;
 
 /**
  * 扩展处理子异常继承的基类
+ *
+ * @author 花花
  * @ClassName: OpenException
  * @DetaTime 2018-03-13 09:48:32
- * @author 花花
  */
 public class OpenException extends ApiException {
 

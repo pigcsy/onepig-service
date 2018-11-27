@@ -7,9 +7,10 @@ import java.io.Serializable;
 
 /**
  * 全局汇总 Dto
+ *
+ * @author 花花
  * @ClassName: GlobalDto
  * @DetaTime 2018-03-13 09:48:32
- * @author 花花
  */
 @Data
 @NoArgsConstructor

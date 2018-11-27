@@ -16,12 +16,12 @@
 package com.one.pig.check;
 
 
-import com.one.pig.ShiroUtil;
 import com.one.pig.ShiroUser;
+import com.one.pig.ShiroUtil;
 import com.one.pig.core.listener.ConfigListener;
+import com.one.pig.core.util.common.SpringContextHolder;
 import com.one.pig.core.util.support.CollectionKit;
 import com.one.pig.core.util.support.HttpKit;
-import com.one.pig.core.util.common.SpringContextHolder;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

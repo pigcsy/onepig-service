@@ -17,27 +17,27 @@ public class Menu extends Base {
     /**
      * 菜单编号
      */
-    private String  code;
+    private String code;
     /**
      * 菜单父编号
      */
-    private String  pcode;
+    private String pcode;
     /**
      * 当前菜单的所有父菜单编号
      */
-    private String  pcodes;
+    private String pcodes;
     /**
      * 菜单名称
      */
-    private String  name;
+    private String name;
     /**
      * 菜单图标
      */
-    private String  icon;
+    private String icon;
     /**
      * url地址
      */
-    private String  url;
+    private String url;
     /**
      * 菜单排序号
      */
@@ -53,7 +53,7 @@ public class Menu extends Base {
     /**
      * 备注
      */
-    private String  tips;
+    private String tips;
     /**
      * 菜单状态 :  1:启用   0:不启用
      */

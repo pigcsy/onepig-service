@@ -36,23 +36,21 @@ import java.util.Random;
  */
 public class ShiroUtil {
 
-    private static final String NAMES_DELIMETER = ",";
-
     /**
      * 加盐参数
      */
     public final static String hashAlgorithmName = "MD5";
-
     /**
      * 循环次数
      */
     public final static int hashIterations = 1024;
+    private static final String NAMES_DELIMETER = ",";
 
     /**
      * shiro密码加密工具类
      *
      * @param credentials 密码
-     * @param saltSource 密码盐
+     * @param saltSource  密码盐
      * @return
      */
     public static String md5(String credentials, String saltSource) {
@@ -62,6 +60,7 @@ public class ShiroUtil {
 
     /**
      * 获取随机盐值
+     *
      * @param length
      * @return
      */
@@ -100,7 +99,6 @@ public class ShiroUtil {
 
     /**
      * 从shiro获取session
-     *
      */
     public static Session getSession() {
         return getSubject().getSession();
@@ -108,7 +106,6 @@ public class ShiroUtil {
 
     /**
      * 获取shiro指定的sessionKey
-     *
      */
     @SuppressWarnings("unchecked")
     public static <T> T getSessionAttr(String key) {
@@ -118,7 +115,6 @@ public class ShiroUtil {
 
     /**
      * 设置shiro指定的sessionKey
-     *
      */
     public static void setSessionAttr(String key, Object value) {
         Session session = getSession();
@@ -137,8 +133,7 @@ public class ShiroUtil {
     /**
      * 验证当前用户是否属于该角色？,使用时与lacksRole 搭配使用
      *
-     * @param roleName
-     *            角色名
+     * @param roleName 角色名
      * @return 属于该角色：true，否则false
      */
     public static boolean hasRole(String roleName) {
@@ -149,8 +144,7 @@ public class ShiroUtil {
     /**
      * 与hasRole标签逻辑相反，当用户不属于该角色时验证通过。
      *
-     * @param roleName
-     *            角色名
+     * @param roleName 角色名
      * @return 不属于该角色：true，否则false
      */
     public static boolean lacksRole(String roleName) {
@@ -160,8 +154,7 @@ public class ShiroUtil {
     /**
      * 验证当前用户是否属于以下任意一个角色。
      *
-     * @param roleNames
-     *            角色列表
+     * @param roleNames 角色列表
      * @return 属于:true,否则false
      */
     public static boolean hasAnyRoles(String roleNames) {
@@ -181,8 +174,7 @@ public class ShiroUtil {
     /**
      * 验证当前用户是否属于以下所有角色。
      *
-     * @param roleNames
-     *            角色列表
+     * @param roleNames 角色列表
      * @return 属于:true,否则false
      */
     public static boolean hasAllRoles(String roleNames) {
@@ -202,8 +194,7 @@ public class ShiroUtil {
     /**
      * 验证当前用户是否拥有指定权限,使用时与lacksPermission 搭配使用
      *
-     * @param permission
-     *            权限名
+     * @param permission 权限名
      * @return 拥有权限：true，否则false
      */
     public static boolean hasPermission(String permission) {
@@ -215,8 +206,7 @@ public class ShiroUtil {
     /**
      * 与hasPermission标签逻辑相反，当前用户没有制定权限时，验证通过。
      *
-     * @param permission
-     *            权限名
+     * @param permission 权限名
      * @return 拥有权限：true，否则false
      */
     public static boolean lacksPermission(String permission) {

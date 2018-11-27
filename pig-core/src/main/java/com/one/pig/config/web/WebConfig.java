@@ -41,18 +41,19 @@ public class WebConfig {
 
     /**
      * druid监控 配置URI拦截策略
+     *
      * @return
      */
     @Bean
-    public FilterRegistrationBean druidStatFilter(){
+    public FilterRegistrationBean druidStatFilter() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new WebStatFilter());
         //添加过滤规则.
         filterRegistrationBean.addUrlPatterns("/*");
         //添加不需要忽略的格式信息.
         filterRegistrationBean.addInitParameter(
-                "exclusions","/swagger-ui.html,/static/*,*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid,/druid/*");
+                "exclusions", "/swagger-ui.html,/static/*,*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid,/druid/*");
         //用于session监控页面的用户名显示 需要登录后主动将username注入到session里
-        filterRegistrationBean.addInitParameter("principalSessionName","username");
+        filterRegistrationBean.addInitParameter("principalSessionName", "username");
         return filterRegistrationBean;
     }
 
@@ -66,7 +67,7 @@ public class WebConfig {
 
 
     @Bean
-    public JdkRegexpMethodPointcut druidStatPointcut(){
+    public JdkRegexpMethodPointcut druidStatPointcut() {
         JdkRegexpMethodPointcut druidStatPointcut = new JdkRegexpMethodPointcut();
         String patterns = "com.one.pig.modular.*.service.*";
         //可以set多个
@@ -87,6 +88,7 @@ public class WebConfig {
 
     /**
      * druid 为druidStatPointcut添加拦截
+     *
      * @return
      */
     @Bean

@@ -132,14 +132,14 @@ public class Contrast {
                 }
                 String prefix = "get";
                 int prefixLength = 3;
-                if(field.getType().getName().equals("java.lang.Boolean")){
+                if (field.getType().getName().equals("java.lang.Boolean")) {
                     prefix = "is";
                     prefixLength = 2;
                 }
                 Method getMethod = null;
-                try{
+                try {
                     getMethod = clazz.getDeclaredMethod(prefix + StrKit.firstCharToUpperCase(field.getName()));
-                }catch(java.lang.NoSuchMethodException e){
+                } catch (java.lang.NoSuchMethodException e) {
                     System.err.println("this className:" + clazz.getName() + " is not methodName: " + e.getMessage());
                     continue;
                 }

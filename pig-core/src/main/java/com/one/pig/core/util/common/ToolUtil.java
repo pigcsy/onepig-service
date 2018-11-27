@@ -29,17 +29,17 @@ import java.util.Map.Entry;
  * 高频方法集合类
  */
 public class ToolUtil {
-    
+
     /**
      * 判断一个对象是否是时间类型
-     * 
+     *
      * @author stylefeng
      * @Date 2017/4/18 12:55
      */
-    public static String dateType(Object o){
-        if(o instanceof Date){
+    public static String dateType(Object o) {
+        if (o instanceof Date) {
             return DateUtils.getDay((Date) o);
-        }else{
+        } else {
             return o.toString();
         }
     }
@@ -53,16 +53,16 @@ public class ToolUtil {
      */
     public static String getExceptionMsg(Exception e) {
         StringWriter sw = new StringWriter();
-        try{
+        try {
             e.printStackTrace(new PrintWriter(sw));
-        }finally {
+        } finally {
             try {
                 sw.close();
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
         }
-        return sw.getBuffer().toString().replaceAll("\\$","T");
+        return sw.getBuffer().toString().replaceAll("\\$", "T");
     }
 
     /**
@@ -424,7 +424,7 @@ public class ToolUtil {
      * map的key转为小写
      *
      * @param map
-     * @return Map<String,Object>
+     * @return Map<String , Object>
      */
     public static Map<String, Object> caseInsensitiveMap(Map<String, Object> map) {
         Map<String, Object> tempMap = new HashMap<>();
@@ -501,7 +501,7 @@ public class ToolUtil {
      * @author stylefeng
      * @Date 2017/5/7 21:56
      */
-    public static String currentTime(){
+    public static String currentTime() {
         return DateUtils.getTime();
     }
 
@@ -511,7 +511,7 @@ public class ToolUtil {
      * @author stylefeng
      * @Date 2017/5/7 22:01
      */
-    public static String firstLetterToUpper(String val){
+    public static String firstLetterToUpper(String val) {
         return StrKit.firstCharToUpperCase(val);
     }
 
@@ -521,7 +521,7 @@ public class ToolUtil {
      * @author stylefeng
      * @Date 2017/5/7 22:02
      */
-    public static String firstLetterToLower(String val){
+    public static String firstLetterToLower(String val) {
         return StrKit.firstCharToLowerCase(val);
     }
 
@@ -531,7 +531,7 @@ public class ToolUtil {
      * @author stylefeng
      * @Date 2017/5/23 22:34
      */
-    public static Boolean getKaptchaOnOff(){
+    public static Boolean getKaptchaOnOff() {
         return SpringContextHolder.getBean(PigProperties.class).getKaptchaOpen();
     }
 
@@ -541,11 +541,11 @@ public class ToolUtil {
      * @author stylefeng
      * @Date 2017/5/24 22:34
      */
-    public static Boolean isWinOs(){
+    public static Boolean isWinOs() {
         String os = System.getProperty("os.name");
-        if(os.toLowerCase().startsWith("win")){
+        if (os.toLowerCase().startsWith("win")) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -556,7 +556,7 @@ public class ToolUtil {
      * @author stylefeng
      * @Date 2017/5/24 22:35
      */
-    public static String getTempPath(){
+    public static String getTempPath() {
         return System.getProperty("java.io.tmpdir");
     }
 }

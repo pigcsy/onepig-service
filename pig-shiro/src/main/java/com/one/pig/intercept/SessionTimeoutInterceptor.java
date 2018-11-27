@@ -33,11 +33,11 @@ public class SessionTimeoutInterceptor extends BaseController {
 
         if (servletPath.equals("/kaptcha") || servletPath.equals("/login") || servletPath.equals("/global/sessionError")) {
             return point.proceed();
-        }else{
-            if(ShiroUtil.getSession().getAttribute("sessionFlag") == null){
+        } else {
+            if (ShiroUtil.getSession().getAttribute("sessionFlag") == null) {
                 ShiroUtil.getSubject().logout();
                 throw new InvalidSessionException();
-            }else{
+            } else {
                 return point.proceed();
             }
         }

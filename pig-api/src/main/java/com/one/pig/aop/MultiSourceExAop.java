@@ -18,7 +18,6 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Method;
 
 /**
- * 
  * 多数据源切换的aop
  *
  * @author csy
@@ -28,52 +27,52 @@ import java.lang.reflect.Method;
 @Component
 @ConditionalOnProperty(prefix = "pig", name = "muti-datasource-open", havingValue = "true")
 public class MultiSourceExAop implements Ordered {
-	
-	private Logger log = LoggerFactory.getLogger(this.getClass());
 
-	
-	@Pointcut(value = "@annotation(com.one.pig.common.annotion.DataSource)")
-	private void cut() {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
-	}
-	
-	@Around("cut()")
-	public Object around(ProceedingJoinPoint point) throws Throwable {
-		
-		Signature signature = point.getSignature();
+
+    @Pointcut(value = "@annotation(com.one.pig.common.annotion.DataSource)")
+    private void cut() {
+
+    }
+
+    @Around("cut()")
+    public Object around(ProceedingJoinPoint point) throws Throwable {
+
+        Signature signature = point.getSignature();
         MethodSignature methodSignature = null;
         if (!(signature instanceof MethodSignature)) {
             throw new IllegalArgumentException("该注解只能用于方法");
         }
         methodSignature = (MethodSignature) signature;
-        
+
         Object target = point.getTarget();
         Method currentMethod = target.getClass().getMethod(methodSignature.getName(), methodSignature.getParameterTypes());
-        
+
         DataSource datasource = currentMethod.getAnnotation(DataSource.class);
-        if(datasource != null){
-			DataSourceContextHolder.setDataSourceType(datasource.name());
-			log.debug("设置数据源为：" + datasource.name());
-        }else{
-        	DataSourceContextHolder.setDataSourceType(DSEnum.DATA_SOURCE_PIG);
-			log.debug("设置数据源为：dataSourceCurrent");
+        if (datasource != null) {
+            DataSourceContextHolder.setDataSourceType(datasource.name());
+            log.debug("设置数据源为：" + datasource.name());
+        } else {
+            DataSourceContextHolder.setDataSourceType(DSEnum.DATA_SOURCE_PIG);
+            log.debug("设置数据源为：dataSourceCurrent");
         }
-        
+
         try {
-        	return point.proceed();
-		} finally {
-			log.debug("清空数据源信息！");
-			DataSourceContextHolder.clearDataSourceType();
-		}
-	}
-	
-	
-	/**
-	 * aop的顺序要早于spring的事务
-	 */
-	@Override
-	public int getOrder() {
-		return 1;
-	}
+            return point.proceed();
+        } finally {
+            log.debug("清空数据源信息！");
+            DataSourceContextHolder.clearDataSourceType();
+        }
+    }
+
+
+    /**
+     * aop的顺序要早于spring的事务
+     */
+    @Override
+    public int getOrder() {
+        return 1;
+    }
 
 }

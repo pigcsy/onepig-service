@@ -19,7 +19,7 @@ public class LoginLog extends Base {
     /**
      * 日志名称
      */
-    private String  logname;
+    private String logname;
     /**
      * 管理员id
      */
@@ -27,19 +27,19 @@ public class LoginLog extends Base {
     /**
      * 创建时间
      */
-    private Date    createtime;
+    private Date createtime;
     /**
      * 是否执行成功
      */
-    private String  succeed;
+    private String succeed;
     /**
      * 具体消息
      */
-    private String  message;
+    private String message;
     /**
      * 登录ip
      */
-    private String  ip;
+    private String ip;
 
 
     public Integer getId() {
