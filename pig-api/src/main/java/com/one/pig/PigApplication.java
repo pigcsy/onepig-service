@@ -13,16 +13,23 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @Date 2017/5/21 12:06
  */
 @EnableSwagger2
-@SpringBootApplication(scanBasePackages = "com.one.pig")
-public class PigApplication {
+@SpringBootApplication
+public class PigApplication  {
 
     protected final static Logger logger = LoggerFactory.getLogger(PigApplication.class);
 
+    // public static void main(String[] args) {
+    //     SpringApplication.run(PigApplication.class, args);
+    //     logger.info("PigApplication is success!");
+    //
+    // }
+
+    // @Override
+    // protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+    //     return builder.sources(PigApplication.class);
+    // }
+
     public static void main(String[] args) {
         SpringApplication.run(PigApplication.class, args);
-        logger.info("PigApplication is success!");
-
     }
-
-
 }

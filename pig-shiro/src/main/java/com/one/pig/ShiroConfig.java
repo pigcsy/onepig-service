@@ -22,8 +22,6 @@ public class ShiroConfig {
 
     @Bean
     public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager) {
-
-
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         // 没有登陆的用户只能访问登陆页面
