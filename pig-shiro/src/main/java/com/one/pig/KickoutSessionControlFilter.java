@@ -66,7 +66,7 @@ public class KickoutSessionControlFilter extends AccessControlFilter {
         }
         Session session = subject.getSession();
         User user = (User) subject.getPrincipal();
-        String username = user.getName();
+        String username = user.getUserName();
         Serializable sessionId = session.getId();
         //读取缓存   没有就存入
         Deque<Serializable> deque = cache.get(username);

@@ -18,7 +18,7 @@ public class PigErrorView implements View {
 
     @Override
     public String getContentType() {
-        return "text/html";
+        return "404/html";
     }
 
     @Override

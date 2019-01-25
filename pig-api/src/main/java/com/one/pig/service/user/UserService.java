@@ -1,61 +1,26 @@
 package com.one.pig.service.user;
 
-import com.one.pig.ShiroUser;
-import com.one.pig.core.bean.UserDto;
+import com.one.pig.system.dao.UserMapper;
 import com.one.pig.system.model.User;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
-public interface UserService {
-    /**
-     * 根据账号获取登录用户
-     *
-     * @param account 账号
-     */
-    User user(String account);
+import java.util.List;
 
-    /**
-     * 根据系统用户获取Shiro的用户
-     *
-     * @param user 系统用户
-     */
-    ShiroUser shiroUser(User user);
+@Service
+public class UserService {
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+    @Autowired
+    RestTemplate restTemplate;
 
-    /**
-     * 获取shiro的认证信息
-     */
-    SimpleAuthenticationInfo info(ShiroUser shiroUser, User user, String realmName);
+    @Autowired
+    UserMapper userMapper;
 
-    /**
-     * 发送短信前判断账户是否存在
-     *
-     * @param account
-     */
-    void checkAccount(String account);
-
-
-    /**
-     * 修改用户密码
-     *
-     * @param account
-     * @param newPwd
-     */
-    void changeUserPwd(String account, String newPwd);
-
-    /**
-     * 新增用户
-     *
-     * @param user
-     */
-    void insert(UserDto user);
-
-    /**
-     * 修改用户状态（客服）
-     *
-     * @param userId
-     * @param status
-     */
-    void editUserStatus(Integer userId, String status);
-
-
-    void editUser(Integer userId, String name, String password);
+    public void test() {
+        List<User> userList=userMapper.selectAll();
+        System.out.println("aaa");
+    }
 }

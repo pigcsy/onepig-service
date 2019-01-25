@@ -12,7 +12,9 @@ pig:
   spring-session-open: false #是否开启spring session,如果是多机环境需要开启(true/false)
   session-invalidate-time: 1800 #session失效时间(只在单机环境下生效，多机环境在SpringSessionConfig类中配置) 单位：秒
   session-validation-interval: 900 #多久检测一次失效的session(只在单机环境下生效) 单位：秒
-
+logging:
+  level:
+    tk.mybatis: TRACE
 ###################  项目启动端口  ###################
 server:
   port: 8080
@@ -21,11 +23,22 @@ server:
     accesslog:
       directory: logs
     uri-encoding: utf-8
+    redirect-context-root: true
+  servlet:
+    context-path: /service
 
+druid:
+  url: jdbc:mysql://47.98.107.248:3306/one_pig
+  username: root
+  password:
+  initial-size: 1
+  min-idle: 1
+  max-active: 20
+  test-on-borrow: true
 
 ###################  MyBatis 配置  ###################
 mybatis:
-  type-aliases-package: com.one.pig
+  type-aliases-package: com.one.pig.system
   mapper-locations: classpath:mapper/*.xml
 
 ###################  MyBatis 分页插件配置  ###################
@@ -34,6 +47,12 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+
+mapper:
+  mappers:
+    - com.one.pig.core.base.MyMapper
+  not-empty: false
+  identity: MYSQL
 
 
 ###################  beetl配置  ###################
@@ -44,8 +63,7 @@ beetl:
   resource-tagsuffix: tag
   resource-auto-check: true #是否检测文件变化,开发用true合适，但线上要改为false
 
-###################  spring配置  ###################
-spring:
+  ###################  spring配置  ###################
   redis:
     host: 127.0.0.1
     port: 6379
@@ -82,10 +100,7 @@ spring:
       enabled: always
   resources:
     static-locations: ["classpath:/MATE-INF","classpath:/WEB-INFO/view"]
-mapper:
-  mappers: com.one.pig
-  not-empty: false
-  identity: MYSQL
+
 ##配置日志
 #logging:
 #  #配置日志文件路径
@@ -97,6 +112,11 @@ mapper:
 #  file: log\myspringboot.log
 #  pattern:
 #    dateformat: yyyy-MM-dd HH:mm:ss.SSS
+spring:
+  profiles:
+    active: dev
+
+
 ---
 
 ##########################################################
@@ -110,12 +130,12 @@ spring:
     password: 458721928@qqCom
     filters: log4j,wall,mergeStat
 
-#多数据源
-biz:
-  datasource:
-    url: jdbc:mysql://47.98.107.248:3306/biz?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: 458721928@qqCom
+##多数据源
+#biz:
+#  datasource:
+#    url: jdbc:mysql://47.98.107.248:3306/biz?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+#    username: root
+#    password: 458721928@qqCom
 
 logging:
   level.root: info
@@ -140,4 +160,3 @@ logging:
   level.root: warn
   path: logs/
   file: pig.log
-

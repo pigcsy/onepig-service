@@ -6,9 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Table;
-import java.util.Date;
-
 /**
  * <p>
  * 管理员表
@@ -17,7 +14,6 @@ import java.util.Date;
  * @author stylefeng
  * @since 2017-07-11
  */
-@Table(name = "sys_user")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,39 +26,9 @@ public class User extends Base {
     /**
      * 账号
      */
-    private String account;
-    /**
-     * 密码
+    private Integer userId;    /**
+     * 账号
      */
-    private String password;
-    /**
-     * md5密码盐
-     */
-    private String salt;
-    /**
-     * 名字
-     */
-    private String name;
+    private String userName;
 
-    /**
-     * 角色id
-     */
-    private String roleId;
-    /**
-     * 部门id
-     */
-    private Integer deptId;
-    /**
-     * 状态(1：启用  2：冻结  3：删除）
-     */
-    private Integer status;
-
-    private Date createDate;
-
-    private Date updateDate;
-
-
-    public void setAccount(String account) {
-        this.account = account;
-    }
 }

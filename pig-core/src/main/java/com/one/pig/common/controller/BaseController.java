@@ -1,11 +1,7 @@
 package com.one.pig.common.controller;
 
-import com.one.pig.common.constant.state.Order;
-import com.one.pig.common.constant.tips.SuccessTip;
 import com.one.pig.common.page.PageInfoBT;
-import com.one.pig.common.page.PageReq;
 import com.one.pig.common.warpper.BaseControllerWarpper;
-import com.one.pig.core.util.common.ToolUtil;
 import com.one.pig.core.util.support.HttpKit;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -27,7 +23,6 @@ public class BaseController {
     protected static String REDIRECT = "redirect:";
     protected static String FORWARD = "forward:";
 
-    protected static SuccessTip SUCCESS_TIP = new SuccessTip();
 
     protected HttpServletRequest getHttpServletRequest() {
         return HttpKit.getRequest();
@@ -64,25 +59,7 @@ public class BaseController {
         return new PageInfoBT<T>(page);
     }
 
-    public PageReq defaultPage() {
-        HttpServletRequest request = HttpKit.getRequest();
-        int limit = Integer.valueOf(request.getParameter("limit"));
-        int offset = Integer.valueOf(request.getParameter("offset"));
-        String sort = request.getParameter("sort");
-        String order = request.getParameter("order");
-        PageReq pageReq = new PageReq(limit, offset, sort, order);
-        if (ToolUtil.isEmpty(sort)) {
-            pageReq.setOpenSort(false);
-        } else {
-            pageReq.setOpenSort(true);
-            if (Order.ASC.getDes().equals(order)) {
-                pageReq.setAsc(true);
-            } else {
-                pageReq.setAsc(false);
-            }
-        }
-        return pageReq;
-    }
+
 
     /**
      * 包装一个list，让list增加额外属性
